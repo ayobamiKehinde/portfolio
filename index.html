@@ -124,22 +124,71 @@
         <div class="work-item">
           <div class="work-header" onclick="toggleWork(this)">
             <div class="work-left">
-              <div class="work-category">Pipeline data</div>
-              <h3>Rebuilt a broken CRM so the CEO could trust the forecast for the first time</h3>
+              <div class="work-category">Broken follow-up</div>
+              <h3>Automated follow-up agent that detects stale deals and re-engages without human input</h3>
               <div class="work-metrics">
-                <span class="metric-pill">Leads moved to correct stages</span>
-                <span class="metric-pill">Duplicates merged</span>
-                <span class="metric-pill">Forecast accuracy restored</span>
+                <span class="metric-pill">30% of stale deals re-engaged</span>
+                <span class="metric-pill">No manual chasing</span>
+                <span class="metric-pill">Consistent outreach without headcount</span>
               </div>
             </div>
             <span class="work-chevron">↓</span>
           </div>
           <div class="work-body">
-            <p>Audited a CRM with 500+ leads sitting in wrong stages, missing fields, and conflicting ownership. Rebuilt the entire stage logic, lifecycle rules, and field structure. The CEO went from guessing at pipeline to reviewing a forecast they could actually act on.</p>
+            <p>Deal age and activity signals are monitored across the entire pipeline. When a lead goes cold, a personalised follow-up sequence fires automatically — no one has to notice, chase, or remember. Reps stopped losing deals to silence.</p>
             <div class="work-tags">
+              <span class="work-tag">Make</span>
               <span class="work-tag">HubSpot</span>
-              <span class="work-tag">Salesforce</span>
               <span class="work-tag">n8n</span>
+              <span class="work-tag">Claude</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item open">
+          <div class="work-header" onclick="toggleWork(this)">
+            <div class="work-left">
+              <div class="work-category">AI agent</div>
+              <h3>Voice SDR agent that qualifies leads and books meetings autonomously — scored 9/10</h3>
+              <div class="work-metrics">
+                <span class="metric-pill">Client scored 9/10 in production</span>
+                <span class="metric-pill">Calls handled 24/7</span>
+                <span class="metric-pill">Zero SDR hours</span>
+              </div>
+            </div>
+            <span class="work-chevron">↓</span>
+          </div>
+          <div class="work-body">
+            <p>ElevenLabs for natural voice, Make for orchestration, GoHighLevel for CRM logging, Claude for intent understanding — wired into a single voice SDR agent that qualifies inbound leads and books meetings without any human involvement.</p>
+            <div class="work-tags">
+              <span class="work-tag">ElevenLabs</span>
+              <span class="work-tag">Make</span>
+              <span class="work-tag">GoHighLevel</span>
+              <span class="work-tag">Claude</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-header" onclick="toggleWork(this)">
+            <div class="work-left">
+              <div class="work-category">No attribution</div>
+              <h3>Merged 64k+ outbound events with inbound replies to show which sequences closed deals</h3>
+              <div class="work-metrics">
+                <span class="metric-pill">64,000+ events attributed</span>
+                <span class="metric-pill">Full funnel metrics</span>
+                <span class="metric-pill">ICP profiling delivered</span>
+              </div>
+            </div>
+            <span class="work-chevron">↓</span>
+          </div>
+          <div class="work-body">
+            <p>A CRM attribution system using Claude Code — 64k+ outbound events and inbound replies merged across Attio, Supabase, and campaign data to surface exactly which sequences influenced closed deals. Full funnel metrics and campaign performance analysis delivered for a US commercial real estate client.</p>
+            <div class="work-tags">
+              <span class="work-tag">Claude Code</span>
+              <span class="work-tag">Attio</span>
+              <span class="work-tag">Supabase</span>
+              <span class="work-tag">Python</span>
             </div>
           </div>
         </div>
@@ -171,30 +220,6 @@
         <div class="work-item">
           <div class="work-header" onclick="toggleWork(this)">
             <div class="work-left">
-              <div class="work-category">Broken follow-up</div>
-              <h3>Automated follow-up agent that detects stale deals and re-engages without human input</h3>
-              <div class="work-metrics">
-                <span class="metric-pill">30% of stale deals re-engaged</span>
-                <span class="metric-pill">No manual chasing</span>
-                <span class="metric-pill">Consistent outreach without headcount</span>
-              </div>
-            </div>
-            <span class="work-chevron">↓</span>
-          </div>
-          <div class="work-body">
-            <p>Deal age and activity signals are monitored across the entire pipeline. When a lead goes cold, a personalised follow-up sequence fires automatically — no one has to notice, chase, or remember. Reps stopped losing deals to silence.</p>
-            <div class="work-tags">
-              <span class="work-tag">Make</span>
-              <span class="work-tag">HubSpot</span>
-              <span class="work-tag">n8n</span>
-              <span class="work-tag">Claude</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-header" onclick="toggleWork(this)">
-            <div class="work-left">
               <div class="work-category">Integration fix</div>
               <h3>End-to-end lead flow: form → CRM → sequence → Slack — zero leads lost at handoff</h3>
               <div class="work-metrics">
@@ -213,54 +238,6 @@
               <span class="work-tag">Salesforce</span>
               <span class="work-tag">n8n</span>
               <span class="work-tag">Slack</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-header" onclick="toggleWork(this)">
-            <div class="work-left">
-              <div class="work-category">No attribution</div>
-              <h3>Merged 64k+ outbound events with inbound replies to show which sequences closed deals</h3>
-              <div class="work-metrics">
-                <span class="metric-pill">64,000+ events attributed</span>
-                <span class="metric-pill">Full funnel metrics</span>
-                <span class="metric-pill">ICP profiling delivered</span>
-              </div>
-            </div>
-            <span class="work-chevron">↓</span>
-          </div>
-          <div class="work-body">
-            <p>A CRM attribution system using Claude Code — 64k+ outbound events and inbound replies merged across Attio, Supabase, and campaign data to surface exactly which sequences influenced closed deals. Full funnel metrics and campaign performance analysis delivered for a US commercial real estate client.</p>
-            <div class="work-tags">
-              <span class="work-tag">Claude Code</span>
-              <span class="work-tag">Attio</span>
-              <span class="work-tag">Supabase</span>
-              <span class="work-tag">Python</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item open">
-          <div class="work-header" onclick="toggleWork(this)">
-            <div class="work-left">
-              <div class="work-category">AI agent</div>
-              <h3>Voice SDR agent that qualifies leads and books meetings autonomously — scored 9/10</h3>
-              <div class="work-metrics">
-                <span class="metric-pill">Client scored 9/10 in production</span>
-                <span class="metric-pill">Calls handled 24/7</span>
-                <span class="metric-pill">Zero SDR hours</span>
-              </div>
-            </div>
-            <span class="work-chevron">↓</span>
-          </div>
-          <div class="work-body">
-            <p>ElevenLabs for natural voice, Make for orchestration, GoHighLevel for CRM logging, Claude for intent understanding — wired into a single voice SDR agent that qualifies inbound leads and books meetings without any human involvement.</p>
-            <div class="work-tags">
-              <span class="work-tag">ElevenLabs</span>
-              <span class="work-tag">Make</span>
-              <span class="work-tag">GoHighLevel</span>
-              <span class="work-tag">Claude</span>
             </div>
           </div>
         </div>
