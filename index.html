@@ -451,41 +451,67 @@
   <script>
     // Hero particle network
     (function () {
-      const canvas = document.getElementById('hero-bg');
-      const ctx = canvas.getContext('2d');
-      let particles = [];
-      const COUNT = 55;
-      const CONNECT_DIST = 150;
+      var canvas = document.getElementById('hero-bg');
+      var ctx = canvas.getContext('2d');
+      var particles = [];
+
+      var COUNT = 110;
+      var CONNECT_DIST = 170;
+
+      // r, g, b arrays
+      var CYAN  = [34, 211, 238];
+      var AMBER = [255, 107, 53];
+      var WHITE = [237, 238, 240];
 
       function resize() {
-        canvas.width = canvas.offsetWidth;
+        canvas.width  = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
       }
 
       function Particle() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.35;
-        this.vy = (Math.random() - 0.5) * 0.35;
-        this.r = Math.random() * 1.5 + 0.8;
-        this.amber = Math.random() < 0.07;
-        this.alpha = Math.random() * 0.35 + 0.12;
+        this.reset();
       }
+      Particle.prototype.reset = function () {
+        this.x  = Math.random() * canvas.width;
+        this.y  = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.45;
+        this.vy = (Math.random() - 0.5) * 0.45;
 
+        var roll = Math.random();
+        if (roll < 0.55) {
+          this.col   = CYAN;
+          this.r     = Math.random() * 2 + 1;
+          this.alpha = Math.random() * 0.55 + 0.25;
+          this.glow  = true;
+        } else if (roll < 0.82) {
+          this.col   = WHITE;
+          this.r     = Math.random() * 1.2 + 0.5;
+          this.alpha = Math.random() * 0.3 + 0.12;
+          this.glow  = false;
+        } else {
+          this.col   = AMBER;
+          this.r     = Math.random() * 2.2 + 1.2;
+          this.alpha = Math.random() * 0.6 + 0.3;
+          this.glow  = true;
+        }
+      };
       Particle.prototype.update = function () {
         this.x += this.vx;
         this.y += this.vy;
         if (this.x < 0 || this.x > canvas.width)  this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        if (this.y < 0 || this.y > canvas.height)  this.vy *= -1;
       };
-
       Particle.prototype.draw = function () {
+        var c = this.col;
+        if (this.glow) {
+          ctx.shadowBlur  = 10;
+          ctx.shadowColor = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.7)';
+        }
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = this.amber
-          ? 'rgba(255,107,53,' + this.alpha + ')'
-          : 'rgba(237,238,240,' + this.alpha + ')';
+        ctx.fillStyle = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + this.alpha + ')';
         ctx.fill();
+        ctx.shadowBlur = 0;
       };
 
       function init() {
@@ -498,14 +524,21 @@
           for (var j = i + 1; j < particles.length; j++) {
             var dx = particles[i].x - particles[j].x;
             var dy = particles[i].y - particles[j].y;
-            var d = Math.sqrt(dx * dx + dy * dy);
+            var d  = Math.sqrt(dx * dx + dy * dy);
             if (d < CONNECT_DIST) {
-              var op = (1 - d / CONNECT_DIST) * 0.1;
+              var fade = 1 - d / CONNECT_DIST;
+              var ci = particles[i].col;
+              var cj = particles[j].col;
+              // blend the two particle colours
+              var r = Math.round((ci[0] + cj[0]) / 2);
+              var g = Math.round((ci[1] + cj[1]) / 2);
+              var b = Math.round((ci[2] + cj[2]) / 2);
+              var op = fade * 0.22;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = 'rgba(237,238,240,' + op + ')';
-              ctx.lineWidth = 0.6;
+              ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + op + ')';
+              ctx.lineWidth = 0.7;
               ctx.stroke();
             }
           }
@@ -514,8 +547,8 @@
 
       function tick() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        particles.forEach(function (p) { p.update(); p.draw(); });
         drawLines();
+        particles.forEach(function (p) { p.update(); p.draw(); });
         requestAnimationFrame(tick);
       }
 
