@@ -449,113 +449,121 @@
   </footer>
 
   <script>
-    // Hero particle network
+    // Hero — data pipeline flow
     (function () {
       var canvas = document.getElementById('hero-bg');
-      var ctx = canvas.getContext('2d');
-      var particles = [];
+      var ctx    = canvas.getContext('2d');
+      var particles  = [];
+      var lanes      = [];
+      var nextSpawn  = [];
+      var LANE_COUNT = 11;
 
-      var COUNT = 110;
-      var CONNECT_DIST = 170;
-
-      // r, g, b arrays
-      var CYAN  = [34, 211, 238];
+      var CYAN  = [34,  211, 238];
       var AMBER = [255, 107, 53];
       var WHITE = [237, 238, 240];
 
       function resize() {
         canvas.width  = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
+        initLanes();
       }
 
-      function Particle() {
-        this.reset();
-      }
-      Particle.prototype.reset = function () {
-        this.x  = Math.random() * canvas.width;
-        this.y  = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.45;
-        this.vy = (Math.random() - 0.5) * 0.45;
-
-        var roll = Math.random();
-        if (roll < 0.55) {
-          this.col   = CYAN;
-          this.r     = Math.random() * 2 + 1;
-          this.alpha = Math.random() * 0.55 + 0.25;
-          this.glow  = true;
-        } else if (roll < 0.82) {
-          this.col   = WHITE;
-          this.r     = Math.random() * 1.2 + 0.5;
-          this.alpha = Math.random() * 0.3 + 0.12;
-          this.glow  = false;
-        } else {
-          this.col   = AMBER;
-          this.r     = Math.random() * 2.2 + 1.2;
-          this.alpha = Math.random() * 0.6 + 0.3;
-          this.glow  = true;
+      function initLanes() {
+        lanes     = [];
+        nextSpawn = [];
+        var pad  = canvas.height * 0.07;
+        var step = (canvas.height - pad * 2) / (LANE_COUNT - 1);
+        for (var i = 0; i < LANE_COUNT; i++) {
+          lanes.push(pad + step * i);
+          nextSpawn.push(i * 120); // stagger initial spawns
         }
-      };
-      Particle.prototype.update = function () {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > canvas.width)  this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height)  this.vy *= -1;
-      };
-      Particle.prototype.draw = function () {
-        var c = this.col;
-        if (this.glow) {
-          ctx.shadowBlur  = 10;
-          ctx.shadowColor = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.7)';
-        }
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + this.alpha + ')';
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      };
-
-      function init() {
-        particles = [];
-        for (var i = 0; i < COUNT; i++) particles.push(new Particle());
       }
 
-      function drawLines() {
-        for (var i = 0; i < particles.length; i++) {
-          for (var j = i + 1; j < particles.length; j++) {
-            var dx = particles[i].x - particles[j].x;
-            var dy = particles[i].y - particles[j].y;
-            var d  = Math.sqrt(dx * dx + dy * dy);
-            if (d < CONNECT_DIST) {
-              var fade = 1 - d / CONNECT_DIST;
-              var ci = particles[i].col;
-              var cj = particles[j].col;
-              // blend the two particle colours
-              var r = Math.round((ci[0] + cj[0]) / 2);
-              var g = Math.round((ci[1] + cj[1]) / 2);
-              var b = Math.round((ci[2] + cj[2]) / 2);
-              var op = fade * 0.22;
-              ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + op + ')';
-              ctx.lineWidth = 0.7;
-              ctx.stroke();
-            }
+      function pickColor() {
+        var r = Math.random();
+        return r < 0.58 ? CYAN : r < 0.78 ? WHITE : AMBER;
+      }
+
+      function spawn(laneY) {
+        var c = pickColor();
+        return {
+          x:        -8,
+          y:        laneY + (Math.random() - 0.5) * 14,
+          speed:    Math.random() * 2.4 + 0.8,
+          r:        Math.random() * 1.6 + 0.8,
+          col:      c,
+          alpha:    Math.random() * 0.4 + 0.45,
+          trail:    [],
+          trailLen: Math.floor(Math.random() * 40 + 28)
+        };
+      }
+
+      function tick(ts) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Faint lane guide lines
+        ctx.lineWidth   = 0.5;
+        ctx.strokeStyle = 'rgba(237,238,240,0.04)';
+        for (var i = 0; i < lanes.length; i++) {
+          ctx.beginPath();
+          ctx.moveTo(0, lanes[i]);
+          ctx.lineTo(canvas.width, lanes[i]);
+          ctx.stroke();
+        }
+
+        // Spawn
+        for (var i = 0; i < lanes.length; i++) {
+          if (ts > nextSpawn[i]) {
+            particles.push(spawn(lanes[i]));
+            if (Math.random() < 0.28) particles.push(spawn(lanes[i])); // burst pair
+            nextSpawn[i] = ts + 650 + Math.random() * 1300;
           }
         }
-      }
 
-      function tick() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawLines();
-        particles.forEach(function (p) { p.update(); p.draw(); });
+        // Draw + update
+        particles = particles.filter(function (p) {
+          p.trail.unshift({ x: p.x, y: p.y });
+          if (p.trail.length > p.trailLen) p.trail.pop();
+          p.x += p.speed;
+
+          var c = p.col;
+
+          // Gradient comet trail
+          if (p.trail.length > 1) {
+            var tail = p.trail[p.trail.length - 1];
+            var grad = ctx.createLinearGradient(tail.x, tail.y, p.x, p.y);
+            grad.addColorStop(0, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0)');
+            grad.addColorStop(1, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (p.alpha * 0.55) + ')');
+            ctx.beginPath();
+            ctx.moveTo(tail.x, tail.y);
+            for (var t = p.trail.length - 2; t >= 0; t--) {
+              ctx.lineTo(p.trail[t].x, p.trail[t].y);
+            }
+            ctx.strokeStyle  = grad;
+            ctx.lineWidth    = p.r * 1.3;
+            ctx.lineCap      = 'round';
+            ctx.lineJoin     = 'round';
+            ctx.stroke();
+          }
+
+          // Glowing head
+          ctx.shadowBlur  = 16;
+          ctx.shadowColor = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.95)';
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + p.alpha + ')';
+          ctx.fill();
+          ctx.shadowBlur = 0;
+
+          return p.x < canvas.width + 60;
+        });
+
         requestAnimationFrame(tick);
       }
 
-      window.addEventListener('resize', function () { resize(); init(); });
+      window.addEventListener('resize', function () { resize(); particles = []; });
       resize();
-      init();
-      tick();
+      requestAnimationFrame(tick);
     })();
 
     // Accordion
