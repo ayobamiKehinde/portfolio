@@ -79,28 +79,6 @@ nav {
   max-width: var(--max); margin: 0 auto;
   padding: 7rem 2rem 4rem;
 }
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--accent-dim);
-  border: 1px solid var(--accent-border);
-  color: var(--muted2);
-  font-size: 0.8rem; font-weight: 500;
-  padding: 0.38rem 0.9rem;
-  border-radius: 100px; margin-bottom: 2rem;
-  width: fit-content;
-}
-.hero-eyebrow .dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--accent);
-}
-.hero-intro {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  font-weight: 600;
-  color: var(--muted2);
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
-}
-.hero-intro .name { color: var(--accent); }
 #hero h1 {
   font-size: clamp(3rem, 8vw, 5.2rem);
   font-weight: 800;
@@ -130,19 +108,6 @@ nav {
   border: 1px solid var(--border);
 }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-/* certs */
-.certs {
-  display: flex; flex-wrap: wrap; gap: 0.6rem;
-  margin-bottom: 2.4rem;
-}
-.cert-badge {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--surface); border: 1px solid var(--border);
-  color: var(--muted2); font-size: 0.78rem; font-weight: 500;
-  padding: 0.35rem 0.85rem; border-radius: 6px;
-}
-.cert-badge svg { flex-shrink: 0; }
 
 /* trusted */
 .trusted-row {
@@ -406,9 +371,6 @@ footer p { font-size: 0.82rem; color: var(--muted); }
   .hero-sub { font-size: 0.97rem; margin-bottom: 2rem; }
   .btn-group { flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
   .btn { width: 100%; justify-content: center; }
-  .certs { gap: 0.4rem; }
-  .cert-badge { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
-
   /* Sections */
   .section-wrap { padding: 3.5rem 1.2rem; }
 
