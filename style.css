@@ -32,7 +32,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: #3D7FFF;
   margin-bottom: 0.5rem;
 }
 .divider {
