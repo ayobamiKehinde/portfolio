@@ -3,26 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ayo Kehinde - CRM & Revenue Operations</title>
-  <meta property="og:title" content="Ayo Kehinde - CRM & Revenue Operations" />
-  <meta property="og:description" content="I rebuild broken CRMs, eliminate manual work, and build the automations your revenue operation actually needs - in 2 weeks." />
+  <title>Opsly — Revenue Infrastructure for Scaling B2B Teams</title>
+  <meta name="description" content="I put a number on what your revenue system is quietly costing you. Free audit for scaling B2B teams." />
+  <meta property="og:title" content="Opsly — Revenue Infrastructure for Scaling B2B Teams" />
+  <meta property="og:description" content="I put a number on what your revenue system is quietly costing you. Free audit for scaling B2B teams." />
   <meta property="og:image" content="https://portfolio-eight-omega-82.vercel.app/images/ayo.png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://portfolio-eight-omega-82.vercel.app/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://portfolio-eight-omega-82.vercel.app/images/ayo.png" />
+  <link rel="icon" type="image/svg+xml" href="images/opsly-icon-mark.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <a href="#hero" class="nav-logo">Ayo<span>.</span></a>
+    <a href="#hero" class="nav-logo" aria-label="Opsly">
+      <svg width="108" height="32" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="26" fill="none" stroke="#EDEEF0" stroke-width="5" stroke-dasharray="136 19" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+        <path d="M 66 24 L 76 20 L 73 30 Z" fill="#FF6B35"/>
+        <text x="86" y="55" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#EDEEF0">psly</text>
+      </svg>
+    </a>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#modules">Modules</a></li>
       <li><a href="#testimonials">Clients</a></li>
-      <li><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2zKjtnyVuAWWqUtEmAKzQiV4gyNiOZjz8EYFgb8WcJxMdXSyLyOOYk9CaN96jANRRVKoOfW0H7?gv=true" target="_blank" class="nav-cta">Free audit</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2zKjtnyVuAWWqUtEmAKzQiV4gyNiOZjz8EYFgb8WcJxMdXSyLyOOYk9CaN96jANRRVKoOfW0H7?gv=true" target="_blank" class="nav-cta">Book a free audit</a></li>
     </ul>
   </nav>
 
@@ -43,15 +52,15 @@
     </div>
     <div class="certs">
       <span class="cert-badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c6af7" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         Salesforce Certified Admin
       </span>
       <span class="cert-badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c6af7" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         Salesforce Associate
       </span>
       <span class="cert-badge">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7c6af7" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" stroke-width="2.2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         HubSpot Certified
       </span>
     </div>
@@ -437,7 +446,14 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Ayo Kehinde</p>
+    <a href="#hero" aria-label="Opsly">
+      <svg width="80" height="24" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="26" fill="none" stroke="#6B7280" stroke-width="5" stroke-dasharray="136 19" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+        <path d="M 66 24 L 76 20 L 73 30 Z" fill="#FF6B35"/>
+        <text x="86" y="55" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#6B7280">psly</text>
+      </svg>
+    </a>
+    <p>© 2026 Opsly</p>
     <div class="footer-links">
       <a href="mailto:kehindeayobami2022@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/ayobami-kehinde-a00215245/" target="_blank">LinkedIn</a>
