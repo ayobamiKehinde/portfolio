@@ -203,6 +203,66 @@ nav {
 }
 .pain-item p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
 
+/* ── BEFORE / AFTER ── */
+.before-after-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ba-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+.ba-row:last-child { border-bottom: none; }
+.ba-cell {
+  padding: 1.1rem 1.4rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.ba-header { background: var(--surface2); }
+.ba-label-col { border-right: 1px solid var(--border); }
+.ba-before-head {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); border-right: 1px solid var(--border);
+}
+.ba-after-head {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cyan);
+}
+.ba-label {
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-right: 1px solid var(--border);
+  display: flex; align-items: center;
+}
+.ba-before {
+  color: var(--muted2);
+  border-right: 1px solid var(--border);
+}
+.ba-after {
+  color: var(--text);
+  font-weight: 500;
+}
+.ba-row:not(.ba-header):hover .ba-after {
+  color: var(--cyan);
+  transition: color 0.2s;
+}
+@media (max-width: 600px) {
+  .ba-row { grid-template-columns: 1fr; }
+  .ba-label { display: none; }
+  .ba-before { border-right: none; border-bottom: 1px solid var(--border); color: var(--muted); }
+  .ba-cell { padding: 0.9rem 1.1rem; }
+  .ba-before-head, .ba-after-head { border-right: none; }
+  .ba-before-head { border-bottom: 1px solid var(--border); }
+}
+
 /* ── FORCE AND FRICTION ── */
 .ff-intro {
   max-width: 680px;
