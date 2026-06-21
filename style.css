@@ -32,7 +32,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #3D7FFF;
+  color: var(--cyan);
   margin-bottom: 0.5rem;
 }
 .divider {
@@ -66,12 +66,12 @@ nav {
 }
 .nav-links a:hover { color: var(--cyan); }
 .nav-cta {
-  background: #3D7FFF; color: #fff !important;
+  background: var(--cyan); color: #0D0F14 !important;
   padding: 0.45rem 1.1rem; border-radius: 6px;
   font-weight: 600; font-size: 0.85rem !important;
   transition: background 0.2s !important;
 }
-.nav-cta:hover { background: #2D6FEF !important; color: #fff !important; }
+.nav-cta:hover { background: #1AB8D3 !important; color: #0D0F14 !important; }
 
 /* ── HERO ── */
 #hero {
@@ -139,8 +139,8 @@ nav {
   text-decoration: none; transition: all 0.2s;
   cursor: pointer; border: none;
 }
-.btn-primary { background: #3D7FFF; color: #fff; }
-.btn-primary:hover { background: #2D6FEF; transform: translateY(-2px); }
+.btn-primary { background: var(--cyan); color: #0D0F14; }
+.btn-primary:hover { background: #1AB8D3; transform: translateY(-2px); }
 .btn-outline {
   background: transparent; color: var(--muted2);
   border: 1px solid var(--border);
