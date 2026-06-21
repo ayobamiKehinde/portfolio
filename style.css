@@ -22,7 +22,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   line-height: 1.65;
 }
 
@@ -61,10 +61,10 @@ nav {
 }
 .nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
 .nav-links a {
-  color: var(--muted); text-decoration: none;
+  color: var(--text); text-decoration: none;
   font-size: 0.88rem; transition: color 0.2s;
 }
-.nav-links a:hover { color: var(--text); }
+.nav-links a:hover { color: var(--cyan); }
 .nav-cta {
   background: var(--accent); color: #fff !important;
   padding: 0.45rem 1.1rem; border-radius: 6px;
@@ -176,27 +176,32 @@ nav {
 }
 
 /* ── PAIN POINTS ── */
-.pain-grid {
+.pain-list { display: flex; flex-direction: column; }
+.pain-item {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1rem;
+  grid-template-columns: 52px 1fr;
+  gap: 1.8rem;
+  padding: 1.8rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+  transition: border-color 0.2s;
 }
-.pain-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.4rem 1.5rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+.pain-item:last-child { border-bottom: none; }
+.pain-item:hover { border-color: rgba(34,211,238,0.2); }
+.pain-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  padding-top: 0.25rem;
+  font-variant-numeric: tabular-nums;
 }
-.pain-card:hover {
-  border-color: var(--cyan-border);
-  box-shadow: 0 0 18px rgba(34,211,238,0.06);
+.pain-item h3 {
+  font-size: 1rem; font-weight: 700;
+  margin-bottom: 0.35rem; color: var(--text);
+  line-height: 1.35;
 }
-.pain-card h3 {
-  font-size: 0.95rem; font-weight: 700;
-  margin-bottom: 0.4rem; color: var(--text);
-}
-.pain-card p { font-size: 0.85rem; color: var(--muted); }
+.pain-item p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
 
 /* ── WORK ── */
 .work-list { display: flex; flex-direction: column; gap: 0; }
