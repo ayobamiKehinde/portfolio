@@ -646,6 +646,58 @@ nav.nav--scrolled {
   padding: 0.25rem 0.7rem; border-radius: 5px;
 }
 
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-image-wrap {
+  position: sticky;
+  top: 6rem;
+}
+.about-image {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+.about-content { display: flex; flex-direction: column; gap: 2rem; }
+.about-body { display: flex; flex-direction: column; gap: 1.1rem; }
+.about-body p { font-size: 0.95rem; color: var(--muted2); line-height: 1.8; }
+.about-certs-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.certs-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cert-pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted2);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+}
+.cert-pill--progress {
+  border-color: var(--cyan-border);
+  color: var(--cyan);
+  background: var(--cyan-dim);
+}
+.cert-pill--progress em { font-style: normal; opacity: 0.7; font-size: 0.75rem; }
+
+@media (max-width: 700px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-image-wrap { position: static; }
+  .about-image { aspect-ratio: 4/3; }
+}
+
 /* ── FINAL CTA ── */
 #cta-section {
   text-align: center;
