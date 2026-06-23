@@ -2,7 +2,9 @@
 
 :root {
   --bg: #0D0F14;
+  --bg-glass: rgba(13, 15, 20, 0.75);
   --surface: #13161E;
+  --surface-glass: rgba(19, 22, 30, 0.80);
   --surface2: #181C27;
   --border: #232836;
   --accent: #FF6B35;
@@ -17,13 +19,25 @@
   --max: 960px;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
 
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+
+/* Glass overlay so canvas shows through all sections */
+body > div[style*="border-top"] {
+  background: rgba(13, 15, 20, 0.82);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* ── UTILS ── */
@@ -86,7 +100,7 @@ nav.nav--scrolled {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
   overflow: hidden;
-  background: radial-gradient(ellipse 90% 60% at 50% 40%, #111520 0%, var(--bg) 70%);
+  background: transparent;
 }
 #hero::before {
   content: '';
@@ -100,12 +114,13 @@ nav.nav--scrolled {
   pointer-events: none;
 }
 #hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
   display: block;
+  pointer-events: none;
 }
 .hero-content {
   position: relative;
@@ -736,7 +751,9 @@ nav.nav--scrolled {
 /* ── FINAL CTA ── */
 #cta-section {
   text-align: center;
-  background: var(--surface);
+  background: rgba(19, 22, 30, 0.82);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 6rem 2rem;
