@@ -739,6 +739,88 @@
     </div>
   </div>
 
+  <!-- FAQ -->
+  <div style="border-top: 1px solid var(--border);">
+    <div class="section-wrap fade-in" id="faq">
+      <div class="section-label">FAQ</div>
+      <h2 style="font-size: clamp(1.5rem,4vw,2rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.6rem;">Common questions</h2>
+      <div class="divider"></div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do I need to give you access to my CRM?
+            <span class="faq-chevron">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>No. The first call is just a conversation. No data access needed. If you're open to it afterwards, giving us read-only access lets us show you an exact number instead of an estimate. Entirely your call.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What if I don't have a CRM, or mine's just spreadsheets and memory?
+            <span class="faq-chevron">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>That's fine, and more common than you'd think. The audit still works. We just build the financial picture from how things actually run today, not from a system that doesn't exist yet.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Will this replace people on my team, or just give them more software to learn?
+            <span class="faq-chevron">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>Neither, usually. Most of what we build removes manual work, not people. Your team spends less time on admin and more time on the parts of the job that actually need a person. Anything new gets built to run quietly in the background, not as another tool someone has to manage.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What happens if the audit finds nothing major?
+            <span class="faq-chevron">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>Then we tell you that. The number might be small, or it might be somewhere you've already fixed. We're not going to manufacture a problem to justify a fee. If there's nothing worth building, you'll know, and it costs you nothing to find out.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How is this different from hiring a RevOps freelancer or agency?
+            <span class="faq-chevron">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>Most freelancers or agencies start by selling you a service. We start by finding the number, then build only what the number justifies. Sometimes that's one small fix, sometimes it's a full system. You're not buying a package before you know what's actually broken.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What's the investment?
+            <span class="faq-chevron">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>Depends entirely on what the audit finds. Most builds run £1,500 to £5,000, with an optional monthly retainer if you want ongoing support. You'll know the exact number before you commit to anything.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How long does this take, start to finish?
+            <span class="faq-chevron">↓</span>
+          </button>
+          <div class="faq-a">
+            <p>The audit itself takes about a week: the call, then a few days for us to put the number together, then the second call where we walk you through it. If you move forward, most builds ship in 2 to 4 weeks depending on what's actually needed.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- FINAL CTA -->
   <section id="cta-section">
     <div class="section-label" style="margin-bottom:1rem;">Ready to fix it?</div>
@@ -879,6 +961,14 @@
       { threshold: 0.08 }
     );
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('faq-open');
+      document.querySelectorAll('.faq-item.faq-open').forEach(el => el.classList.remove('faq-open'));
+      if (!isOpen) item.classList.add('faq-open');
+    }
 
     // Nav scroll background
     const nav = document.querySelector('nav');
