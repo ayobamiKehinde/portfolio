@@ -280,18 +280,18 @@
         <div class="work-item">
           <div class="work-header" onclick="toggleWork(this)">
             <div class="work-left">
-              <div class="work-category">Revenue generated</div>
-              <h3>CRM rebuild that contributed to 6 figures in revenue for Scrub the Deck</h3>
+              <div class="work-category">Full GTM build</div>
+              <h3>Revenue engine build for Scrub the Deck: CRM, outbound, and automations from the ground up</h3>
               <div class="work-metrics">
-                <span class="metric-pill">6-figure revenue contribution</span>
-                <span class="metric-pill">Healthy pipeline maintained</span>
+                <span class="metric-pill accent-pill">£200k+ revenue generated</span>
+                <span class="metric-pill">Pipeline rebuilt end to end</span>
                 <span class="metric-pill">Ongoing retainer</span>
               </div>
             </div>
             <span class="work-chevron">↓</span>
           </div>
           <div class="work-body">
-            <p>Scrub the Deck came in with a CRM that wasn't doing its job - leads in the wrong places, no reliable pipeline visibility, and revenue slipping through the gaps. Rebuilt the entire system from the ground up: stage logic, lifecycle rules, automations, and data hygiene. The result was a healthy, trusted CRM that the team could sell from - contributing directly to 6 figures in generated revenue.</p>
+            <p>Scrub the Deck had a CRM that nobody trusted, outbound that was still manual, and no reliable view of what was working. Built the entire revenue engine from scratch: stage logic, lifecycle rules, outbound sequences, automations, and data hygiene. The team went from guessing to having a system they could actually sell from. Direct contribution: £200k+ in generated revenue.</p>
             <div class="work-tags">
               <span class="work-tag">GoHighLevel</span>
               <span class="work-tag">Make</span>
@@ -610,7 +610,7 @@
         <div class="testimonial-card">
           <div class="quote-mark">"</div>
           <blockquote>
-            Ayo found exactly where our revenue system was leaking — manual work that was quietly costing us real money every month. After the fix, that cost was gone and the team could focus on growth instead of admin. He's the first call I make for anything automation or systems related.
+            Ayo found exactly where our revenue system was leaking: manual work that was quietly costing us real money every month. After the fix, that cost was gone and the team could focus on growth instead of admin. He's the first call I make for anything automation or systems related.
           </blockquote>
           <div class="testimonial-author">
             <img src="images/kelly.jpg" alt="Kelly Sinclair" class="author-avatar" />
@@ -626,8 +626,11 @@
             Ayo completely transformed how our revenue operation runs. The CRM workflows were a mess: manual, inconsistent, and costing us hours every week. After the rebuild, everything just works. The team is saving serious time and we're seeing it directly in revenue. Genuinely one of the best operators I've worked with.
           </blockquote>
           <div class="testimonial-author">
-            <strong>Isaac Adepoju</strong>
-            <span>CEO, AIoTouch Softwares</span>
+            <img src="images/isaac.jpeg" alt="Isaac Adepoju" class="author-avatar" />
+            <div>
+              <strong>Isaac Adepoju</strong>
+              <span>CEO, AIoTouch Softwares</span>
+            </div>
           </div>
         </div>
       </div>
@@ -668,18 +671,6 @@
           <span class="tool-pill"><img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="" aria-hidden="true" />Claude</span>
           <span class="tool-pill"><img src="https://cdn.simpleicons.org/supabase/ffffff" alt="" aria-hidden="true" />Supabase</span>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TRUSTED BY -->
-  <div style="border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface);">
-    <div style="max-width: var(--max); margin: 0 auto; padding: 3rem 2rem; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;">
-      <span class="trusted-label">10+ B2B teams served across the UK and US</span>
-      <div class="trusted-logos">
-        <img src="images/vero-tech.png" alt="Vero Tech" />
-        <img src="images/scrub-the-deck.png" alt="Scrub the Deck" class="logo-dark" />
-        <img src="images/aiotouch.png" alt="AIoTouch" />
       </div>
     </div>
   </div>
@@ -856,6 +847,12 @@
       { threshold: 0.08 }
     );
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Nav scroll background
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+    }, { passive: true });
   </script>
 
 </body>
