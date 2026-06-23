@@ -147,7 +147,7 @@
 
   <!-- FORCE AND FRICTION -->
   <div style="border-top: 1px solid var(--border);">
-    <div class="section-wrap fade-in" id="force-friction">
+    <div class="section-wrap fade-in glow-dual" id="force-friction">
       <div class="section-label">The framework</div>
       <h2 style="font-size: clamp(1.5rem,4vw,2rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.6rem;">Force and friction</h2>
       <div class="divider"></div>
@@ -456,7 +456,7 @@
 
   <!-- MODULES -->
   <div style="border-top: 1px solid var(--border);">
-    <div class="section-wrap fade-in" id="modules">
+    <div class="section-wrap fade-in glow-cyan" id="modules">
       <div class="section-label">What gets installed</div>
       <h2 style="font-size: clamp(1.5rem,4vw,2rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.6rem;">What gets installed</h2>
       <div class="divider"></div>
@@ -545,7 +545,7 @@
 
   <!-- TESTIMONIALS -->
   <div style="border-top: 1px solid var(--border);">
-    <div class="section-wrap fade-in" id="testimonials">
+    <div class="section-wrap fade-in glow-amber" id="testimonials">
       <div class="section-label">What clients say</div>
       <h2 style="font-size: clamp(1.5rem,4vw,2rem); font-weight:800; letter-spacing:-0.03em; margin-bottom:0.6rem;">Don't take our word for it</h2>
       <div class="divider"></div>
@@ -567,7 +567,7 @@
             <span>CEO, Scrub the Deck</span>
           </div>
           <div class="video-stat">
-            £200k+
+            £<span class="count-up" data-target="200">0</span>k+
             <small>revenue generated</small>
           </div>
         </div>
@@ -710,7 +710,7 @@
 
   <!-- ABOUT -->
   <div style="border-top: 1px solid var(--border);">
-    <div class="section-wrap fade-in" id="about">
+    <div class="section-wrap fade-in glow-cyan" id="about">
       <div class="section-label">About</div>
       <div class="about-grid">
         <div class="about-image-wrap">
@@ -961,6 +961,26 @@
       { threshold: 0.08 }
     );
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Count-up animation
+    const countUpObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.target);
+        const duration = 1400;
+        const start = performance.now();
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(ease * target);
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        countUpObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.count-up').forEach(el => countUpObserver.observe(el));
 
     // FAQ accordion
     function toggleFaq(btn) {

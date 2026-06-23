@@ -19,25 +19,13 @@
   --max: 960px;
 }
 
-html {
-  scroll-behavior: smooth;
-  background: var(--bg);
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: transparent;
+  background: var(--bg);
   color: var(--text);
   font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   line-height: 1.65;
-  position: relative;
-  z-index: 1;
-}
-
-/* Glass overlay so canvas shows through all sections */
-body > div[style*="border-top"] {
-  background: rgba(13, 15, 20, 0.82);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
 }
 
 /* ── UTILS ── */
@@ -61,6 +49,22 @@ body > div[style*="border-top"] {
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 .fade-in.visible { opacity: 1; transform: none; }
+
+/* ── SECTION GLOW ACCENTS ── */
+.glow-cyan {
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(34,211,238,0.06) 0%, transparent 70%);
+}
+.glow-amber {
+  background: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(255,107,53,0.07) 0%, transparent 70%);
+}
+.glow-dual {
+  background:
+    radial-gradient(ellipse 55% 40% at 10% 50%, rgba(34,211,238,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 40% at 90% 50%, rgba(255,107,53,0.05) 0%, transparent 60%);
+}
+
+/* Count-up animation */
+.count-up { display: inline; }
 
 /* ── NAV ── */
 nav {
@@ -100,7 +104,7 @@ nav.nav--scrolled {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center;
   overflow: hidden;
-  background: transparent;
+  background: radial-gradient(ellipse 90% 60% at 50% 40%, #111520 0%, var(--bg) 70%);
 }
 #hero::before {
   content: '';
@@ -114,13 +118,12 @@ nav.nav--scrolled {
   pointer-events: none;
 }
 #hero-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
   display: block;
-  pointer-events: none;
 }
 .hero-content {
   position: relative;
@@ -751,9 +754,7 @@ nav.nav--scrolled {
 /* ── FINAL CTA ── */
 #cta-section {
   text-align: center;
-  background: rgba(19, 22, 30, 0.82);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  background: var(--surface);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 6rem 2rem;
