@@ -56,25 +56,40 @@ Ayo modeled some structural ideas on TCA's site (theconversionarchitects.com) bu
 Instead, Ayo's site uses **Force and Friction** as its own equivalent section — an original framework Ayo already uses in his RevOps thinking. This section replaces what would otherwise be a TCA-style pattern section. Do not reintroduce a TCA-style pattern block elsewhere on the page.
 
 ## Module names (final, do not use TCA's names)
+0. **The Operating Layer** (process mapping, ownership, playbooks)
 1. **The Trust Layer** (CRM / data governance)
 2. **The Signal Engine** (lead enrichment, outbound, AI SDR, speed-to-lead)
 3. **The Continuity Layer** (sales-to-CS handoff, lifecycle, expansion)
 4. **The Visibility Layer** (attribution, dashboards, reporting)
 
-## Section order (final)
+## Site structure (final — homepage + subpages)
+The site moved from a single long page to a short homepage with detail pushed to subpages, modeled on scrubthedeck.com's short-gateway-homepage pattern. Do not re-merge the subpages back into `index.html`.
+
+**`index.html` (homepage, trimmed):**
 1. Hero
-2. Sound familiar? (pain points list)
-3. Force and Friction (original framework section)
-4. Before / After table
-5. Selected work (case studies — AI SDR case study leads, not CRM)
-6. Modules ("What gets installed")
-7. Who this is for
-8. Testimonials
-9. How it works (3 steps: Discovery call → The audit → Review & close)
-10. Tools (accordion)
-11. About (Ayo's story + certifications)
-12. FAQ
-13. Final CTA
+2. Sound familiar? — top 5 pain points only (not all 9)
+3. Force and Friction — 2-line intro, not the full 4-paragraph version
+4. Selected work — 3 case study previews + link to `work.html`
+5. Modules teaser — one paragraph naming all 5 layers + link to `modules.html`
+6. Testimonials (full, unchanged)
+7. How it works (full, unchanged — already short)
+8. About teaser — photo + 1 short paragraph + link to `about.html`
+9. FAQ — all 7 questions, full accordion (kept in full on the homepage, not trimmed — collapsed accordion doesn't add visual density)
+10. Final CTA
+
+**Subpages (full detail, linked from nav and homepage teasers):**
+- `work.html` — all 6 case studies
+- `modules.html` — all 5 module cards with full bullet lists
+- `about.html` — full bio (3 paragraphs) + certifications
+
+There is no separate `faq.html` — nav's FAQ link points to `index.html#faq`.
+
+**Cut entirely (not moved anywhere):**
+- Before / After table — was redundant with Sound familiar? and Force and Friction
+- Tool stack marquee — decorative, didn't sell anything
+- Who this is for — good-fit/not-a-fit lists dropped for homepage brevity
+
+Nav and footer (logo, links, CTA) are duplicated identically across `index.html`, `work.html`, `modules.html`, `about.html`, `faq.html` — there's no shared template/include, so nav changes must be applied to all five files.
 
 ## Known content gaps / pending assets
 - Opsly logo — SVG files exist in `images/`, use those (inline in HTML for nav/footer, favicon for icon mark)
