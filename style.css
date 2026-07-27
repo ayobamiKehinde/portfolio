@@ -325,6 +325,36 @@ nav.nav--scrolled {
   max-width: 480px;
 }
 
+/* ── GEO PAGE: PROOF IMAGE ── */
+.proof-image-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.proof-image {
+  width: 100%;
+  max-width: 680px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: block;
+}
+.proof-image-placeholder {
+  width: 100%;
+  max-width: 680px;
+  aspect-ratio: 16 / 9;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 /* ── WORK ── */
 .work-list { display: flex; flex-direction: column; gap: 0; }
 
