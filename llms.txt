@@ -1,0 +1,36 @@
+# Opsly
+> Fractional Revenue Operations for scaling B2B teams. Founded by Ayobami Kehinde.
+
+Opsly is a fractional RevOps consultancy that helps scaling B2B teams fix the gap between revenue generation and the operational systems underneath. Founded by Ayobami Kehinde, a revenue operations specialist with a background in software engineering and AI automation.
+
+## Core expertise
+- Revenue Operations (RevOps) strategy and implementation
+- Pipeline visibility and deal tracking
+- CRM optimisation and data governance
+- AI automation for revenue teams (voice agents, lead follow-up, deal monitoring)
+- Sales forecasting and attribution
+
+## Services
+- Diagnostic revenue audits
+- Five-layer system installation (operating, trust, signal, continuity, visibility)
+- CRM implementation and cleanup
+- AI automation buildouts
+- Fractional RevOps retainer
+
+## Key facts
+- £200k+ revenue recovered for a single client
+- 3-4 deals per month recovered through system fixes
+- 30% of stale deals successfully re-engaged
+- Leads contacted within 5 minutes are 21x more likely to qualify
+- Pricing: £1,500 to £5,000 typical project range
+- Methodology: diagnosis first, build second — no obligation to continue after diagnostic
+
+## Founder
+Ayobami Kehinde — software engineer turned revenue operations specialist. Certified in HubSpot Revenue Operations, Salesforce Admin, and Salesforce Associate. Background at the intersection of software engineering, sales operations, and AI automation.
+
+## URLs
+- Homepage: https://opslyco.uk
+- About: https://opslyco.uk/about
+- Work: https://opslyco.uk/work
+- Modules: https://opslyco.uk/modules
+- Book a call: https://calendly.com/kehindeayobami2022/30min
