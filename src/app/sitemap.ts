@@ -1,10 +1,12 @@
 import type { MetadataRoute } from 'next'
 import { sanityClient } from '@/lib/sanity'
 
+type SitemapPost = { slug: { current: string }; updatedAt?: string }
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = await sanityClient.fetch<{ slug: { current: string }; updatedAt?: string }[]>(
-    `*[_type == "post"]{ slug, updatedAt }`
-  ).catch(() => [])
+  const posts = await sanityClient
+    .fetch<SitemapPost[]>(`*[_type == "post"]{ slug, updatedAt }`)
+    .catch((): SitemapPost[] => [])
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: 'https://opslyco.uk',         lastModified: new Date(), changeFrequency: 'weekly',  priority: 1 },
@@ -17,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postRoutes: MetadataRoute.Sitemap = posts.map(p => ({
     url: `https://opslyco.uk/blog/${p.slug.current}`,
     lastModified: p.updatedAt ? new Date(p.updatedAt) : new Date(),
-    changeFrequency: 'monthly',
+    changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 

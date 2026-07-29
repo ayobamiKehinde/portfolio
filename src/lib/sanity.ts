@@ -1,13 +1,17 @@
 import { createClient } from '@sanity/client'
 
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
+
 export const sanityClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  projectId: projectId || 'unconfigured',
+  dataset,
   apiVersion: '2024-01-01',
   useCdn: true,
 })
 
 export async function getPosts() {
+  if (!projectId) return []
   return sanityClient.fetch(
     `*[_type == "post"] | order(publishedAt desc) {
       _id, title, slug, metaDescription, publishedAt, readTime,
@@ -18,6 +22,7 @@ export async function getPosts() {
 }
 
 export async function getPost(slug: string) {
+  if (!projectId) return null
   return sanityClient.fetch(
     `*[_type == "post" && slug.current == $slug][0] {
       _id, title, slug, metaTitle, metaDescription,
