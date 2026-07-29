@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
-import { PortableText } from '@portabletext/react'
 import { getPost, sanityClient } from '@/lib/sanity'
 
 export const revalidate = 3600
@@ -37,7 +36,7 @@ type Post = {
   metaTitle?: string
   metaDescription?: string
   tldr?: string[]
-  body: unknown[]
+  body: string
   faq?: { question: string; answer: string }[]
   publishedAt?: string
   updatedAt?: string
@@ -100,9 +99,7 @@ export default async function BlogPost({ params }: Props) {
       )}
 
       {post.body && (
-        <div className="post-body">
-          <PortableText value={post.body as Parameters<typeof PortableText>[0]['value']} />
-        </div>
+        <div className="post-body" dangerouslySetInnerHTML={{ __html: post.body as string }} />
       )}
 
       {post.faq && post.faq.length > 0 && (
