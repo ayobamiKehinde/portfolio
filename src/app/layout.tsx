@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { Space_Grotesk } from 'next/font/google'
 import './globals.css'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -34,9 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body style={{ fontFamily: 'var(--font-space), Space Grotesk, system-ui, sans-serif' }}>
-        <Nav />
         {children}
-        <Footer />
       </body>
     </html>
   )

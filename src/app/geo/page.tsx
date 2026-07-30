@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import FadeIn from '@/components/FadeIn'
+import GeoNav from '@/components/GeoNav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Are You Showing Up on AI Search? | Opsly',
@@ -13,6 +15,7 @@ const CALENDLY = 'https://calendly.com/kehindeayobami2022/30min?month=2026-07&da
 export default function GeoPage() {
   return (
     <>
+      <GeoNav />
       <section id="hero" style={{ minHeight: '90vh' }}>
         <div className="hero-content">
           <h1>Your ideal clients are asking AI who to hire. Are you showing up?</h1>
@@ -162,6 +165,7 @@ export default function GeoPage() {
           <a href={CALENDLY} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Book a free 20-minute call →</a>
         </div>
       </section>
+      <Footer />
     </>
   )
 }
