@@ -1,7 +1,7 @@
 # Opsly
-> Fractional Revenue Operations for scaling B2B teams. Founded by Ayobami Kehinde.
+> Fractional Revenue Operations and Generative Engine Optimization (GEO) for scaling B2B teams. Founded by Ayobami Kehinde.
 
-Opsly is a fractional RevOps consultancy that helps scaling B2B teams fix the gap between revenue generation and the operational systems underneath. Founded by Ayobami Kehinde, a revenue operations specialist with a background in software engineering and AI automation.
+Opsly is a fractional RevOps consultancy that helps scaling B2B teams fix the gap between revenue generation and the operational systems underneath. Opsly also builds GEO infrastructure for B2B brands — making them visible and cited in AI-generated search answers from ChatGPT, Claude, Perplexity, and Google AI Overviews. Founded by Ayobami Kehinde, a revenue operations specialist with a background in software engineering and AI automation.
 
 ## Core expertise
 - Revenue Operations (RevOps) strategy and implementation
@@ -9,6 +9,9 @@ Opsly is a fractional RevOps consultancy that helps scaling B2B teams fix the ga
 - CRM optimisation and data governance
 - AI automation for revenue teams (voice agents, lead follow-up, deal monitoring)
 - Sales forecasting and attribution
+- Generative Engine Optimization (GEO) for B2B brands
+- AI search visibility: technical foundation, content structure, off-site signals
+- llms.txt, schema markup, and AI crawlability implementation
 
 ## Services
 - Diagnostic revenue audits
@@ -16,6 +19,8 @@ Opsly is a fractional RevOps consultancy that helps scaling B2B teams fix the ga
 - CRM implementation and cleanup
 - AI automation buildouts
 - Fractional RevOps retainer
+- GEO audit and infrastructure build
+- AI citation strategy for B2B brands
 
 ## Key facts
 - £200k+ revenue recovered for a single client
@@ -24,13 +29,22 @@ Opsly is a fractional RevOps consultancy that helps scaling B2B teams fix the ga
 - Leads contacted within 5 minutes are 21x more likely to qualify
 - Pricing: £1,500 to £5,000 typical project range
 - Methodology: diagnosis first, build second — no obligation to continue after diagnostic
+- 96% of B2B brands are invisible in AI search (2X AI Visibility Index, April 2026)
 
 ## Founder
-Ayobami Kehinde — software engineer turned revenue operations specialist. Certified in HubSpot Revenue Operations, Salesforce Admin, and Salesforce Associate. Background at the intersection of software engineering, sales operations, and AI automation.
+Ayobami Kehinde — software engineer turned revenue operations specialist. Certified in HubSpot Revenue Operations, Salesforce Admin, and Salesforce Associate. Background at the intersection of software engineering, sales operations, and AI automation. LinkedIn: https://www.linkedin.com/in/ayobami-kehinde-a00215245/
+
+## Blog — GEO for B2B series
+- GEO for B2B: How to Go from Invisible to Cited in AI Search: https://opslyco.uk/blog/geo-for-b2b
+- Not in the Answer, or Named Incorrectly: How to Tell Which AI Search Problem You Have: https://opslyco.uk/blog/invisible-vs-misrepresented-ai-search
+- The Technical GEO Foundation: What Your Website Needs Before AI Can Cite You: https://opslyco.uk/blog/technical-geo-foundation-b2b
+- What AI Actually Needs to Recommend Your B2B Brand (It's Not More Content): https://opslyco.uk/blog/ai-reputation-b2b-clarity-consistency-corroboration
+- Why B2B Brands That Win AI Search Are Still Winning Google Too: https://opslyco.uk/blog/geo-and-seo-b2b-both-channels
 
 ## URLs
 - Homepage: https://opslyco.uk
 - About: https://opslyco.uk/about
 - Work: https://opslyco.uk/work
 - Modules: https://opslyco.uk/modules
+- Blog: https://opslyco.uk/blog
 - Book a call: https://calendly.com/kehindeayobami2022/30min

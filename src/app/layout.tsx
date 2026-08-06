@@ -28,10 +28,55 @@ export const metadata: Metadata = {
   },
 }
 
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://opslyco.uk/#org',
+      name: 'Opsly',
+      url: 'https://opslyco.uk',
+      logo: 'https://opslyco.uk/images/ayo.png',
+      description: 'Fractional revenue operations for B2B teams that have outgrown their current system. CRM, AI automation, attribution, and process definition.',
+      founder: {
+        '@type': 'Person',
+        name: 'Ayobami Kehinde',
+        jobTitle: 'Fractional RevOps Consultant and Founder',
+        sameAs: 'https://www.linkedin.com/in/ayobami-kehinde-a00215245/',
+      },
+      sameAs: [
+        'https://www.linkedin.com/in/ayobami-kehinde-a00215245/',
+      ],
+      areaServed: 'Worldwide',
+      knowsAbout: [
+        'revenue operations',
+        'fractional RevOps',
+        'CRM optimisation',
+        'AI automation for revenue teams',
+        'sales operations',
+        'generative engine optimization',
+        'GEO for B2B',
+        'AI search visibility',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://opslyco.uk/#website',
+      url: 'https://opslyco.uk',
+      name: 'Opsly',
+      publisher: { '@id': 'https://opslyco.uk/#org' },
+    },
+  ],
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body style={{ fontFamily: 'var(--font-space), Space Grotesk, system-ui, sans-serif' }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         {children}
       </body>
     </html>
