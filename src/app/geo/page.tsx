@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'Are You Showing Up on AI Search? | Opsly',
   description: 'Most consultants and coaches are invisible on ChatGPT and Perplexity. I fix that. Book a free 20-minute call to see exactly where you stand right now.',
-  alternates: { canonical: 'https://opslyco.uk/geo' },
+  alternates: { canonical: 'https://www.opslyco.uk/geo' },
 }
 
 const CALENDLY = 'https://calendly.com/kehindeayobami2022/30min?month=2026-07&date=2026-07-28'

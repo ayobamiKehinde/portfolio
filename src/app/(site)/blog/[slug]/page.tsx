@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.metaTitle || post.title,
     description: post.metaDescription,
-    alternates: { canonical: `https://opslyco.uk/blog/${slug}` },
+    alternates: { canonical: `https://www.opslyco.uk/blog/${slug}` },
   }
 }
 
@@ -60,7 +60,7 @@ export default async function BlogPost({ params }: Props) {
         datePublished: post.publishedAt,
         dateModified: post.updatedAt || post.publishedAt,
         author: { '@type': 'Person', name: post.author?.name || 'Ayobami Kehinde' },
-        publisher: { '@type': 'Organization', name: 'Opsly', url: 'https://opslyco.uk' },
+        publisher: { '@type': 'Organization', name: 'Opsly', url: 'https://www.opslyco.uk' },
       },
       ...(post.faq && post.faq.length > 0 ? [{
         '@type': 'FAQPage',

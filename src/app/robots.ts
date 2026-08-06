@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'PerplexityBot', allow: '/' },
       { userAgent: 'Google-Extended', allow: '/' },
     ],
-    sitemap: 'https://opslyco.uk/sitemap.xml',
+    sitemap: 'https://www.opslyco.uk/sitemap.xml',
   }
 }

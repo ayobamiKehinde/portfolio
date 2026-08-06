@@ -35,16 +35,16 @@ Opsly is a fractional RevOps consultancy that helps scaling B2B teams fix the ga
 Ayobami Kehinde — software engineer turned revenue operations specialist. Certified in HubSpot Revenue Operations, Salesforce Admin, and Salesforce Associate. Background at the intersection of software engineering, sales operations, and AI automation. LinkedIn: https://www.linkedin.com/in/ayobami-kehinde-a00215245/
 
 ## Blog — GEO for B2B series
-- GEO for B2B: How to Go from Invisible to Cited in AI Search: https://opslyco.uk/blog/geo-for-b2b
-- Not in the Answer, or Named Incorrectly: How to Tell Which AI Search Problem You Have: https://opslyco.uk/blog/invisible-vs-misrepresented-ai-search
-- The Technical GEO Foundation: What Your Website Needs Before AI Can Cite You: https://opslyco.uk/blog/technical-geo-foundation-b2b
-- What AI Actually Needs to Recommend Your B2B Brand (It's Not More Content): https://opslyco.uk/blog/ai-reputation-b2b-clarity-consistency-corroboration
-- Why B2B Brands That Win AI Search Are Still Winning Google Too: https://opslyco.uk/blog/geo-and-seo-b2b-both-channels
+- GEO for B2B: How to Go from Invisible to Cited in AI Search: https://www.opslyco.uk/blog/geo-for-b2b
+- Not in the Answer, or Named Incorrectly: How to Tell Which AI Search Problem You Have: https://www.opslyco.uk/blog/invisible-vs-misrepresented-ai-search
+- The Technical GEO Foundation: What Your Website Needs Before AI Can Cite You: https://www.opslyco.uk/blog/technical-geo-foundation-b2b
+- What AI Actually Needs to Recommend Your B2B Brand (It's Not More Content): https://www.opslyco.uk/blog/ai-reputation-b2b-clarity-consistency-corroboration
+- Why B2B Brands That Win AI Search Are Still Winning Google Too: https://www.opslyco.uk/blog/geo-and-seo-b2b-both-channels
 
 ## URLs
-- Homepage: https://opslyco.uk
-- About: https://opslyco.uk/about
-- Work: https://opslyco.uk/work
-- Modules: https://opslyco.uk/modules
-- Blog: https://opslyco.uk/blog
+- Homepage: https://www.opslyco.uk
+- About: https://www.opslyco.uk/about
+- Work: https://www.opslyco.uk/work
+- Modules: https://www.opslyco.uk/modules
+- Blog: https://www.opslyco.uk/blog
 - Book a call: https://calendly.com/kehindeayobami2022/30min

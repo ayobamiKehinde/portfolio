@@ -9,15 +9,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .catch((): SitemapPost[] => [])
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: 'https://opslyco.uk',         lastModified: new Date(), changeFrequency: 'weekly',  priority: 1 },
-    { url: 'https://opslyco.uk/about',   lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: 'https://opslyco.uk/work',    lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: 'https://opslyco.uk/modules', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: 'https://opslyco.uk/blog',    lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.9 },
+    { url: 'https://www.opslyco.uk',         lastModified: new Date(), changeFrequency: 'weekly',  priority: 1 },
+    { url: 'https://www.opslyco.uk/about',   lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: 'https://www.opslyco.uk/work',    lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: 'https://www.opslyco.uk/modules', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: 'https://www.opslyco.uk/blog',    lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.9 },
   ]
 
   const postRoutes: MetadataRoute.Sitemap = posts.map(p => ({
-    url: `https://opslyco.uk/blog/${p.slug.current}`,
+    url: `https://www.opslyco.uk/blog/${p.slug.current}`,
     lastModified: p.updatedAt ? new Date(p.updatedAt) : new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

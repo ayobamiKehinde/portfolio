@@ -12,11 +12,11 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Opsly | Fractional RevOps for Scaling B2B Teams',
   description: 'Fractional revenue operations for B2B teams that have outgrown their current system. CRM, AI SDR, attribution, and process definition — remote, no headcount added.',
-  metadataBase: new URL('https://opslyco.uk'),
+  metadataBase: new URL('https://www.opslyco.uk'),
   openGraph: {
     title: 'Opsly | Fractional RevOps for Scaling B2B Teams',
     description: 'Fractional revenue operations for B2B teams that have outgrown their current system.',
-    url: 'https://opslyco.uk',
+    url: 'https://www.opslyco.uk',
     type: 'website',
     images: [{ url: '/images/ayo.png' }],
   },
@@ -33,10 +33,10 @@ const orgJsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://opslyco.uk/#org',
+      '@id': 'https://www.opslyco.uk/#org',
       name: 'Opsly',
-      url: 'https://opslyco.uk',
-      logo: 'https://opslyco.uk/images/ayo.png',
+      url: 'https://www.opslyco.uk',
+      logo: 'https://www.opslyco.uk/images/ayo.png',
       description: 'Fractional revenue operations for B2B teams that have outgrown their current system. CRM, AI automation, attribution, and process definition.',
       founder: {
         '@type': 'Person',
@@ -61,10 +61,10 @@ const orgJsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://opslyco.uk/#website',
-      url: 'https://opslyco.uk',
+      '@id': 'https://www.opslyco.uk/#website',
+      url: 'https://www.opslyco.uk',
       name: 'Opsly',
-      publisher: { '@id': 'https://opslyco.uk/#org' },
+      publisher: { '@id': 'https://www.opslyco.uk/#org' },
     },
   ],
 }

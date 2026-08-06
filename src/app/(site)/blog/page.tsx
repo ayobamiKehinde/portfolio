@@ -8,7 +8,7 @@ export const revalidate = 3600
 export const metadata: Metadata = {
   title: 'Blog | Opsly',
   description: 'Revenue operations insights, AI automation guides, and B2B sales infrastructure articles from the Opsly team.',
-  alternates: { canonical: 'https://opslyco.uk/blog' },
+  alternates: { canonical: 'https://www.opslyco.uk/blog' },
 }
 
 type Post = {

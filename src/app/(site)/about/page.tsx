@@ -5,7 +5,7 @@ import FadeIn from '@/components/FadeIn'
 export const metadata: Metadata = {
   title: 'About | Opsly',
   description: 'Ayobami Kehinde — founder of Opsly. From software engineering to revenue operations to AI automation, and why that path led to fractional RevOps.',
-  alternates: { canonical: 'https://opslyco.uk/about' },
+  alternates: { canonical: 'https://www.opslyco.uk/about' },
 }
 
 const jsonLd = {
@@ -13,17 +13,17 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Person',
-      '@id': 'https://opslyco.uk/about#ayobami',
+      '@id': 'https://www.opslyco.uk/about#ayobami',
       name: 'Ayobami Kehinde',
       jobTitle: 'Fractional RevOps Consultant & Founder',
-      worksFor: { '@type': 'Organization', name: 'Opsly', url: 'https://opslyco.uk' },
+      worksFor: { '@type': 'Organization', name: 'Opsly', url: 'https://www.opslyco.uk' },
       description: 'Revenue operations consultant at the intersection of software engineering, sales ops, and AI automation.',
-      url: 'https://opslyco.uk/about',
+      url: 'https://www.opslyco.uk/about',
       knowsAbout: ['Revenue Operations', 'CRM Implementation', 'HubSpot', 'Salesforce', 'AI Automation'],
     },
     {
       '@type': 'WebPage',
-      url: 'https://opslyco.uk/about',
+      url: 'https://www.opslyco.uk/about',
       name: 'About Ayobami Kehinde — Founder of Opsly',
       dateModified: '2026-07-28',
       author: { '@type': 'Person', name: 'Ayobami Kehinde' },

@@ -4,7 +4,7 @@ import FadeIn from '@/components/FadeIn'
 export const metadata: Metadata = {
   title: 'Modules | Opsly',
   description: 'The five layers Opsly installs into a B2B revenue system: operating layer, trust layer, signal engine, continuity layer, and visibility layer.',
-  alternates: { canonical: 'https://opslyco.uk/modules' },
+  alternates: { canonical: 'https://www.opslyco.uk/modules' },
 }
 
 const modules = [

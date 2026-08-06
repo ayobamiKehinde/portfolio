@@ -9,7 +9,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 export const metadata: Metadata = {
   title: 'Opsly | Fractional RevOps for Scaling B2B Teams',
   description: 'Fractional revenue operations for B2B teams that have outgrown their current system. CRM, AI SDR, attribution, and process definition — remote, no headcount added.',
-  alternates: { canonical: 'https://opslyco.uk' },
+  alternates: { canonical: 'https://www.opslyco.uk' },
 }
 
 const jsonLd = {
@@ -17,21 +17,21 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'ProfessionalService',
-      '@id': 'https://opslyco.uk/#organization',
+      '@id': 'https://www.opslyco.uk/#organization',
       name: 'Opsly',
       description: 'Fractional revenue operations for scaling B2B teams.',
-      url: 'https://opslyco.uk/',
-      logo: 'https://opslyco.uk/images/opsly-icon-mark.svg',
+      url: 'https://www.opslyco.uk/',
+      logo: 'https://www.opslyco.uk/images/opsly-icon-mark.svg',
       founder: { '@type': 'Person', name: 'Ayo Kehinde', jobTitle: 'Fractional RevOps Operator' },
       areaServed: 'Worldwide',
       serviceType: ['Revenue Operations', 'CRM Consulting', 'Sales Process Design', 'AI SDR Systems', 'Revenue Attribution'],
     },
     {
       '@type': 'Person',
-      '@id': 'https://opslyco.uk/#ayo',
+      '@id': 'https://www.opslyco.uk/#ayo',
       name: 'Ayo Kehinde',
       jobTitle: 'Fractional RevOps Operator',
-      worksFor: { '@id': 'https://opslyco.uk/#organization' },
+      worksFor: { '@id': 'https://www.opslyco.uk/#organization' },
       knowsAbout: ['HubSpot', 'Salesforce', 'Clay', 'Revenue Operations', 'AI SDR'],
     },
   ],

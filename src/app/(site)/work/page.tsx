@@ -5,7 +5,7 @@ import WorkAccordion from '@/components/WorkAccordion'
 export const metadata: Metadata = {
   title: 'Selected Work | Opsly',
   description: 'Case studies from fractional RevOps engagements: diagnostic audits, AI SDR agents, speed-to-lead automation, and revenue attribution systems.',
-  alternates: { canonical: 'https://opslyco.uk/work' },
+  alternates: { canonical: 'https://www.opslyco.uk/work' },
 }
 
 const allWork = [
